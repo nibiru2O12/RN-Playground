@@ -17,11 +17,22 @@ class TabNav extends Component {
   // return an object
   static navigationOptions = ({navigation}) => {
 
-    const {params} = navigation.state
+    const {params} = navigation.state || {}
+    
     const  title = params ? params.title : "TabNav"
 
     return ({
       headerTitle : title,
+      headerLeft : (
+        <Button
+          onPress={()=>{
+            alert('Moving on Previous Page');
+            navigation.goBack();
+          }}
+          title="Back"
+          color="#fff"
+        />
+      ),
       headerRight: (
         <Button
           onPress={params._increment}
@@ -29,6 +40,7 @@ class TabNav extends Component {
           color="#fff"
         />
       ),
+      
     })
   }
 
