@@ -1,7 +1,6 @@
 import React from 'react'
 import {TouchableOpacity,View,Text,StyleSheet} from 'react-native';
 
-
 const TouchableCard  = props => {
   return(
       <TouchableOpacity  {...props} style={styles.card} onPress={props.onPress}>

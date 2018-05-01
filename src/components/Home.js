@@ -9,6 +9,7 @@ class Home extends Component {
     title : "Home"
   }
 
+
   render(){
     
     const {navigation} = this.props;
@@ -18,9 +19,12 @@ class Home extends Component {
           <TouchableCard onPress={()=>navigation.navigate('TabNav')}>
             <Text>Tab Navigation</Text>
           </TouchableCard>
-          <TouchableCard onPress={()=>navigation.navigate('TabNav',{id:"001"})}>
+          
+          {/* params are added as second params on navigate */}
+          <TouchableCard onPress={()=>navigation.navigate('TabNav',{title:"TabNav Title"})}>
             <Text>Tab Navigation With Params</Text>
           </TouchableCard>
+
           <TouchableCard onPress={()=>navigation.navigate('Drawer')}>
             <Text>Drawer Navigation</Text>
           </TouchableCard>
