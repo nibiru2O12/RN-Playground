@@ -1,12 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button,TouchableOpacity } from 'react-native';
+import {StackNavigator} from 'react-navigation';
+
+import TabNav from './components/Navigations/TabNav';
+import Drawer from './components/Navigations/Drawer';
+import Home from './components/Home';
+
+const RootNav = StackNavigator({
+  Home: {screen:Home},
+  TabNav: {screen: TabNav},
+  Drawer: {screen: Drawer}
+},
+{
+  initialRouteName:"Home"
+});
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <RootNav />
     );
   }
 }
