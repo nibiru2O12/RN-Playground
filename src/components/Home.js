@@ -5,9 +5,11 @@ import TouchableCard from '../UI/TouchableCard';
 import CustomTitle from '../UI/CustomTitle';
 
 class Home extends Component {
-  
-  static navigationOptions = {
-    title : "Home"
+
+  static navigationOptions = ({navigation,navigationOptions}) => {
+    return ({
+      title : "Home"
+    });
   }
 
   render(){
@@ -26,7 +28,8 @@ class Home extends Component {
           </TouchableCard>
 
           {/* passing a component to be used as headerTitle */}
-          <TouchableCard onPress={()=>navigation.navigate('TabNav',{title:<CustomTitle title="Touch Me!" />})}>
+          <TouchableCard 
+            onPress={()=>navigation.navigate('TabNav',{title:<CustomTitle title="Touch Me!" textStyle={{fontWeight: 'bold'}} />})}>
             <Text>Tab Navigation With Title as Component</Text>
           </TouchableCard>
 
