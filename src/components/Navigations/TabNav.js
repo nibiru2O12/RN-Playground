@@ -15,7 +15,14 @@ class TabNav extends Component {
     const {params} = navigation.state
 
     return ({
-      title : params.title || "TabNav"
+      title : params ? params.title : "TabNav",
+      headerStyle: {
+        backgroundColor: 'blue',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
     })
   }
 

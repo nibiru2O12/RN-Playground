@@ -12,7 +12,16 @@ const RootNav = StackNavigator({
   Drawer: {screen: Drawer}
 },
 {
-  initialRouteName:"Home"
+  initialRouteName:"Home",
+  navigationOptions:{
+    headerStyle: {
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  }
 });
 
 export default class App extends React.Component {
