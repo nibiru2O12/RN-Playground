@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {View,Text,TouchableOpacity,StyleSheet} from 'react-native';
 
+import TouchableCard from '../UI/TouchableCard';
+
 class Home extends Component {
   
   static navigationOptions = {
@@ -13,12 +15,15 @@ class Home extends Component {
 
     return(
       <View style={styles.container}>
-          <TouchableOpacity style={styles.card} onPress={()=>navigation.navigate('TabNav')}>
+          <TouchableCard onPress={()=>navigation.navigate('TabNav')}>
             <Text>Tab Navigation</Text>
-          </TouchableOpacity>
-          <TouchableOpacity  style={styles.card} onPress={()=>navigation.navigate('Drawer')}>
+          </TouchableCard>
+          <TouchableCard onPress={()=>navigation.navigate('TabNav',{id:"001"})}>
+            <Text>Tab Navigation With Params</Text>
+          </TouchableCard>
+          <TouchableCard onPress={()=>navigation.navigate('Drawer')}>
             <Text>Drawer Navigation</Text>
-          </TouchableOpacity>
+          </TouchableCard>
       </View>
     )
   }
@@ -26,14 +31,13 @@ class Home extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-  },
-  card: {
-    margin: 10,
-    padding: 10
+  container : {
+    flex : 1,
+    display : "flex",
+    flexDirection: 'column',
+    backgroundColor : "#f4f3ed",
+    justifyContent : "flex-start",
+    padding : 5
   }
 });
 

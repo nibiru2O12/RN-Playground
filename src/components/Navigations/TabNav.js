@@ -12,6 +12,8 @@ class TabNav extends Component {
   render(){
 
     const {navigation} = this.props;
+    const {params} = navigation.state;
+    console.log('params',params);
     
     return(
       <View>
