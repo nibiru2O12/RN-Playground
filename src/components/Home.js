@@ -18,19 +18,23 @@ class Home extends Component {
 
     return(
       <View style={styles.container}>
-          <TouchableCard onPress={()=>navigation.navigate('TabNav')}>
-            <Text>Tab Navigation</Text>
+          <TouchableCard onPress={()=>navigation.navigate('Info')}>
+            <Text>Info Screen</Text>
           </TouchableCard>
           
           {/* params are added as second params on navigate */}
-          <TouchableCard onPress={()=>navigation.navigate('TabNav',{title:"TabNav Title"})}>
-            <Text>Tab Navigation With Params</Text>
+          <TouchableCard onPress={()=>navigation.navigate('Info',{title:"Info Title"})}>
+            <Text>Info Screen With Params</Text>
           </TouchableCard>
 
           {/* passing a component to be used as headerTitle */}
           <TouchableCard 
-            onPress={()=>navigation.navigate('TabNav',{title:<CustomTitle title="Touch Me!" textStyle={{fontWeight: 'bold'}} />})}>
-            <Text>Tab Navigation With Title as Component</Text>
+            onPress={()=>navigation.navigate('Info',{title:<CustomTitle title="Touch Me!" textStyle={{fontWeight: 'bold'}} />})}>
+            <Text>Info Screen With Title as Component</Text>
+          </TouchableCard>
+
+          <TouchableCard onPress={()=>navigation.navigate('TabNav')}>
+            <Text>Tab Navigation</Text>
           </TouchableCard>
 
           <TouchableCard onPress={()=>navigation.navigate('Drawer')}>
@@ -40,6 +44,7 @@ class Home extends Component {
           <TouchableCard onPress={()=>navigation.navigate('Modal')}>
             <Text>Modal Stack</Text>
           </TouchableCard>
+
 
       </View>
     )

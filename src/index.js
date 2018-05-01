@@ -6,11 +6,13 @@ import TabNav from './components/Navigations/TabNav';
 import Drawer from './components/Navigations/Drawer';
 import Home from './components/Home';
 import ModalScreen from './components/ModalScreen';
+import Info from './components/Info';
 
 const MainStack = StackNavigator({
     Home: {screen:Home},
     TabNav: {screen: TabNav},
-    Drawer: {screen: Drawer}
+    Drawer: {screen: Drawer},
+    Info: {screen:Info}
 },
 {
   navigationOptions:{
