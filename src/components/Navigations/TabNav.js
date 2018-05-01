@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {View,Text} from 'react-native';
+import {View,Text,TouchableOpacity} from 'react-native';
 
 import Button from '../../UI/Button';
 
@@ -12,17 +12,12 @@ class TabNav extends Component {
   // props : navigation, navigationOptions, screenProps
   // return an object
   static navigationOptions = ({navigation}) => {
+
     const {params} = navigation.state
+    const  title = params ? params.title : "TabNav"
 
     return ({
-      title : params ? params.title : "TabNav",
-      headerStyle: {
-        backgroundColor: 'blue',
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+      headerTitle : <CustomTitle title={title} />,
     })
   }
 
@@ -44,6 +39,16 @@ class TabNav extends Component {
     )
   }
 
+}
+
+const CustomTitle = props => {
+  return (
+    <TouchableOpacity onPress={()=>alert(1)}>
+      <View>
+        <Text>{props.title}</Text>
+      </View>
+    </TouchableOpacity>
+  )
 }
 
 export default TabNav;
