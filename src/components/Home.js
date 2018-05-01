@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import {View,Text,TouchableOpacity,StyleSheet} from 'react-native';
 
 import TouchableCard from '../UI/TouchableCard';
+import CustomTitle from '../UI/CustomTitle';
 
 class Home extends Component {
   
   static navigationOptions = {
     title : "Home"
   }
-
 
   render(){
     
@@ -25,9 +25,15 @@ class Home extends Component {
             <Text>Tab Navigation With Params</Text>
           </TouchableCard>
 
+          {/* passing a component to be used as headerTitle */}
+          <TouchableCard onPress={()=>navigation.navigate('TabNav',{title:<CustomTitle title="Touch Me!" />})}>
+            <Text>Tab Navigation With Title as Component</Text>
+          </TouchableCard>
+
           <TouchableCard onPress={()=>navigation.navigate('Drawer')}>
             <Text>Drawer Navigation</Text>
           </TouchableCard>
+
       </View>
     )
   }

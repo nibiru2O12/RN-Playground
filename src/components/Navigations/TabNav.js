@@ -17,8 +17,9 @@ class TabNav extends Component {
     const  title = params ? params.title : "TabNav"
 
     return ({
-      headerTitle : <CustomTitle title={title} />,
+      headerTitle : title,
     })
+
   }
 
   render(){
@@ -41,14 +42,5 @@ class TabNav extends Component {
 
 }
 
-const CustomTitle = props => {
-  return (
-    <TouchableOpacity onPress={()=>alert(1)}>
-      <View>
-        <Text>{props.title}</Text>
-      </View>
-    </TouchableOpacity>
-  )
-}
 
 export default TabNav;
