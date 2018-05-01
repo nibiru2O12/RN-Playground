@@ -23,12 +23,16 @@ class TabNav extends Component {
 
     const {navigation} = this.props;
     const {params} = navigation.state;
-    console.log('params',params);
 
     return(
       <View>
         <Text>Tab Navigations</Text>
         <Button title="BACK" onPress={()=>navigation.goBack()} />
+       
+        {/* updating navigation state */}
+        <Button 
+          title="Change navigation state Title = Updated" 
+          onPress={()=>navigation.setParams({title:"Updated"})} />
       </View>
     )
   }
