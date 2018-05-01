@@ -5,14 +5,14 @@ import {StackNavigator} from 'react-navigation';
 import TabNav from './components/Navigations/TabNav';
 import Drawer from './components/Navigations/Drawer';
 import Home from './components/Home';
+import ModalScreen from './components/ModalScreen';
 
-const RootNav = StackNavigator({
-  Home: {screen:Home},
-  TabNav: {screen: TabNav},
-  Drawer: {screen: Drawer}
+const MainStack = StackNavigator({
+    Home: {screen:Home},
+    TabNav: {screen: TabNav},
+    Drawer: {screen: Drawer}
 },
 {
-  initialRouteName:"Home",
   navigationOptions:{
     headerStyle: {
       backgroundColor: '#f4511e',
@@ -22,6 +22,14 @@ const RootNav = StackNavigator({
       fontWeight: 'bold',
     },
   }
+});
+
+const RootNav = StackNavigator({
+  Main: {screen:MainStack},
+  Modal:{screen:ModalScreen}
+},{
+  headerMode:"none",
+  mode:"modal"
 });
 
 export default class App extends React.Component {

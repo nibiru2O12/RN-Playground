@@ -37,6 +37,10 @@ class Home extends Component {
             <Text>Drawer Navigation</Text>
           </TouchableCard>
 
+          <TouchableCard onPress={()=>navigation.navigate('Modal')}>
+            <Text>Modal Stack</Text>
+          </TouchableCard>
+
       </View>
     )
   }
